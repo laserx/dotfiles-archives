@@ -1,4 +1,6 @@
-#Boot `POWERLEVEL9K_INSTALLATION_PATH` at begin
+# =============================================================================
+#                                POWERLEVEL9K
+# =============================================================================
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%{%F{249}%}\u250f"
