@@ -2,6 +2,8 @@
 #                                 TOP
 # =============================================================================
 export TERM="xterm-256color"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 # =============================================================================
 #                             POWERLEVEL9K
@@ -148,8 +150,6 @@ alias pyclear="find . -name '*.pyc' -delete"
 # =============================================================================
 #                                   Variables
 # =============================================================================
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH"
 export GOPATH="$(go env GOPATH)"
