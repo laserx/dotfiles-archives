@@ -1,5 +1,10 @@
 # =============================================================================
-#                                POWERLEVEL9K
+#                                 TOP
+# =============================================================================
+export TERM="xterm-256color"
+
+# =============================================================================
+#                             POWERLEVEL9K
 # =============================================================================
 POWERLEVEL9K_MODE='nerdfont-complete'
 
@@ -106,6 +111,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-synta
 
 zplug "chrissicool/zsh-256color"
 zplug "Tarrasch/zsh-bd"
+zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
 
 
 # Supports oh-my-zsh plugins and the like
@@ -144,7 +150,6 @@ alias pyclear="find . -name '*.pyc' -delete"
 # =============================================================================
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-export TERM="xterm-256color"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/sbin:$PATH"
 export GOPATH="$(go env GOPATH)"
@@ -157,3 +162,5 @@ VIRTUALENVWRAPPER_PYTHON="/usr/local/opt/python/libexec/bin/python"
 export WORKON_HOME=~/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 
+# Check initial directory for any .venv file
+check_venv
