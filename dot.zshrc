@@ -65,7 +65,7 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uf017}"
 POWERLEVEL9K_VI_INSERT_MODE_STRING="I"
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir dir_writable vi_mode vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv command_execution_time load ram time)
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="white"
 POWERLEVEL9K_STATUS_VERBOSE=false
@@ -98,12 +98,15 @@ zplug "plugins/lein",              from:oh-my-zsh, if:"which lein"
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/z",                 from:oh-my-zsh
 zplug "plugins/pip",               from:oh-my-zsh
-zplug "plugins/vi-mode",           from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions",              defer:0
 zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
+
+zplug "chrissicool/zsh-256color"
+zplug "Tarrasch/zsh-bd"
+
 
 # Supports oh-my-zsh plugins and the like
 if [[ $OSTYPE = (linux)* ]]; then
