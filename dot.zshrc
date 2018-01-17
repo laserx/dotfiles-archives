@@ -32,7 +32,7 @@ fi
 
 # export python on linux
 if [[ $OSTYPE = (linux)* ]]; then
-	export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+	export PATH="/usr/bin/python:$PATH"
 fi
 
 # virtualenvwrapper config
