@@ -14,6 +14,7 @@ alias cask="brew cask"
 alias pc="proxychains4 -q"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias pyclear="find . -name '*.pyc' -delete"
+alias screenfetch="screenfetch -E"
 
 
 # =============================================================================
@@ -24,6 +25,7 @@ export PATH="/usr/local/sbin:$PATH"
 export GOPATH="$(go env GOPATH)"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:$HOME/.mix"
 
 # export python by brew installed python
 if [[ $OSTYPE = (darwin)* ]]; then
