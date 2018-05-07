@@ -27,21 +27,6 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:`yarn global bin`"
 export PATH="$PATH:$HOME/.mix"
 
-# export python by brew installed python
-if [[ $OSTYPE = (darwin)* ]]; then
-	export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-fi
-
-# export python on linux
-if [[ $OSTYPE = (linux)* ]]; then
-	export PATH="/usr/bin/python:$PATH"
-fi
-
-# virtualenvwrapper config
-VIRTUALENVWRAPPER_PYTHON="$(which python)"
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
-
 
 # =============================================================================
 #                                   Plugins
@@ -81,11 +66,19 @@ zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
 # Supports oh-my-zsh plugins and the like
 if [[ $OSTYPE = (linux)* ]]; then
 	zplug "plugins/archlinux", from:oh-my-zsh, if:"which pacman"
+    export PATH="/usr/bin/python:$PATH"
+    source /bin/virtualenvwrapper.sh
 fi
 
 if [[ $OSTYPE = (darwin)* ]]; then
 	zplug "plugins/osx", from:oh-my-zsh
+    export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+# virtualenvwrapper config
+VIRTUALENVWRAPPER_PYTHON="$(which python)"
+export WORKON_HOME=~/Envs
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
