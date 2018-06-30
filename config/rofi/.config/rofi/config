@@ -3,7 +3,7 @@
 ! ------------------------------------------------------------------------------
 
 ! General
-rofi.font:                Iosevka Slab 9
+rofi.font:                Iosevka Slab 16
 rofi.fake-transparency:   true
 rofi.hide-scrollbar:      true
 
