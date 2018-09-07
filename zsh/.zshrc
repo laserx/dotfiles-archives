@@ -38,6 +38,7 @@ export PATH="$PATH:$HOME/.mix"
 # =============================================================================
 # Check if zplug is installed
 [ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+export ZPLUG_HOME=~/.zplug
 source ~/.zplug/init.zsh
 
 zplug "mafredri/zsh-async"
@@ -67,6 +68,8 @@ zplug "chrissicool/zsh-256color"
 zplug "Tarrasch/zsh-bd"
 zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
 
+# zplug self-manage enabled
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Supports oh-my-zsh plugins and the like
 if [[ $OSTYPE = (linux)* ]]; then
