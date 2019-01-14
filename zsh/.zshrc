@@ -49,6 +49,8 @@ export PATH="/usr/local/opt/mongodb@3.4/bin:$PATH"
 [ ! -f ~/.vim/autoload/plug.vim ] && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+[ ! -f ~/.local/share/nvim/site/autoload/plug.vim ] && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # =============================================================================
 #                                   Plugins
