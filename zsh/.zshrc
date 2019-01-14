@@ -33,6 +33,7 @@ export GOPATH="$(go env GOPATH)"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:`yarn global bin`"
 export PATH="$PATH:$HOME/.mix"
+export PATH="/usr/local/opt/mongodb@3.4/bin:$PATH"
 
 # =============================================================================
 #                                     Tpm
@@ -48,11 +49,13 @@ export PATH="$PATH:$HOME/.mix"
 [ ! -f ~/.vim/autoload/plug.vim ] && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
 # =============================================================================
 #                                   Plugins
 # =============================================================================
 # Check if zplug is installed
 [ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
+export ZPLUG_HOME=~/.zplug
 source ~/.zplug/init.zsh
 
 zplug "mafredri/zsh-async", from:github
@@ -81,6 +84,8 @@ zplug "chrissicool/zsh-256color"
 zplug "Tarrasch/zsh-bd"
 zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
 
+# zplug self-manage enabled
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Supports oh-my-zsh plugins and the like
 if [[ $OSTYPE = (linux)* ]]; then
