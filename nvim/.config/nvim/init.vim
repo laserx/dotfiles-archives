@@ -44,6 +44,7 @@ Plug 'conradirwin/vim-bracketed-paste'
 Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'itchyny/calendar.vim'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -73,8 +74,8 @@ set number
 set cursorline
 set showcmd             " show command in bottom bar
 
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Fast saving
 nmap <leader>w :w!<cr>
