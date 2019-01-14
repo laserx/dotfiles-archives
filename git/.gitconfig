@@ -1,22 +1,25 @@
 [core]
-    excludesfile = ~/.gitignore_global
-    editor = vim
-    compression = 0
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	compression = 0
 
 [user]
     name = laserx
     email = laserxie@gmail.com
 
+[includeIf "gitdir:~/Repo/silent/"]
+    path = ~/.silent.gitconfig
+
 [alias]
-    st = status
-    co = checkout
-    cm = commit
-    br = branch
-    unstage = reset HEAD
-    last = log -1
-    lga = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --stat --all
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --max-count=10
+	st = status
+	co = checkout
+	cm = commit
+	br = branch
+	unstage = reset HEAD
+	last = log -1
+	lga = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --stat --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --max-count=10
 
 [push]
-    default = simple
+	default = simple
 

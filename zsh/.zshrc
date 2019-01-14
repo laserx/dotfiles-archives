@@ -4,6 +4,7 @@
 export TERM="xterm-256color"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
+export EDITOR="vim"
 
 if [[ $OSTYPE = (linux)* ]]; then
     export GTK_IM_MODULE=fcitx
@@ -20,6 +21,7 @@ alias pc="proxychains4 -q"
 alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 alias pyclear="find . -name '*.pyc' -delete"
 alias screenfetch="screenfetch -E"
+alias hp="all_proxy=127.0.0.1:1087 "
 
 
 # =============================================================================
@@ -32,6 +34,19 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:`yarn global bin`"
 export PATH="$PATH:$HOME/.mix"
 
+# =============================================================================
+#                                     Tpm
+# =============================================================================
+
+[ ! -d ~/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# =============================================================================
+#                                   vim-plug
+# =============================================================================
+
+# Check vim-plug for vim is installed
+[ ! -f ~/.vim/autoload/plug.vim ] && curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # =============================================================================
 #                                   Plugins
@@ -40,9 +55,9 @@ export PATH="$PATH:$HOME/.mix"
 [ ! -d ~/.zplug ] && git clone https://github.com/zplug/zplug ~/.zplug
 source ~/.zplug/init.zsh
 
-zplug "mafredri/zsh-async"
+zplug "mafredri/zsh-async", from:github
 zplug "b4b4r07/enhancd", use:enhancd.sh
-zplug "sindresorhus/pure", use:pure.zsh, as:theme
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "seebi/dircolors-solarized", ignore:"*", as:plugin
 
 zplug "lib/*", from:oh-my-zsh, defer:0
@@ -50,7 +65,6 @@ zplug "lib/*", from:oh-my-zsh, defer:0
 zplug "plugins/git",               from:oh-my-zsh, if:"which git"
 zplug "plugins/go",                from:oh-my-zsh, if:"which go"
 zplug "plugins/golang",            from:oh-my-zsh, if:"which go"
-zplug "plugins/taskwarrior",       from:oh-my-zsh, if:"which task"
 zplug "plugins/lein",              from:oh-my-zsh, if:"which lein"
 zplug "plugins/pip",               from:oh-my-zsh, if:"which pip"
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh, if:"which workon"
@@ -70,13 +84,13 @@ zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
 
 # Supports oh-my-zsh plugins and the like
 if [[ $OSTYPE = (linux)* ]]; then
-	zplug "plugins/archlinux", from:oh-my-zsh, if:"which pacman"
+    zplug "plugins/archlinux", from:oh-my-zsh, if:"which pacman"
     export PATH="/usr/bin/python:$PATH"
     source /bin/virtualenvwrapper.sh
 fi
 
 if [[ $OSTYPE = (darwin)* ]]; then
-	zplug "plugins/osx", from:oh-my-zsh
+    zplug "plugins/osx", from:oh-my-zsh
     export PATH="/usr/local/opt/python/libexec/bin:$PATH"
     source /usr/local/bin/virtualenvwrapper.sh
 fi
@@ -99,3 +113,7 @@ zplug load
 # Check initial directory for any .venv file
 # this function provided by "MichaelAquilina/zsh-autoswitch-virtualenv"
 check_venv
+
+# Direnv hook
+eval "$(direnv hook zsh)"
+
