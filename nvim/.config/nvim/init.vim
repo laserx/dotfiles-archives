@@ -72,7 +72,9 @@ set autoread
 
 set number
 set cursorline
-set showcmd             " show command in bottom bar
+
+" show command in bottom bar
+set showcmd
 
 let mapleader = " "
 let g:mapleader = " "
@@ -83,9 +85,6 @@ nmap <leader>w :w!<cr>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
-
-let g:deoplete#enable_at_startup = 1
-let g:webdevicons_enable = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -109,7 +108,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -154,6 +153,7 @@ endif
 
 " Add a bit extra margin to the left
 set foldcolumn=1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -257,8 +257,8 @@ map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -384,6 +384,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:deoplete#enable_at_startup = 1
+let g:webdevicons_enable = 1
 
 " set gui font(err this)
 if has("gui_running")
