@@ -31,7 +31,7 @@ export GOPATH="$(go env GOPATH)"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:`yarn global bin`"
 export PATH="$PATH:$HOME/.mix"
-
+export PATH="/usr/local/opt/mongodb@3.4/bin:$PATH"
 
 # =============================================================================
 #                                   Plugins
@@ -51,7 +51,6 @@ zplug "lib/*", from:oh-my-zsh, defer:0
 zplug "plugins/git",               from:oh-my-zsh, if:"which git"
 zplug "plugins/go",                from:oh-my-zsh, if:"which go"
 zplug "plugins/golang",            from:oh-my-zsh, if:"which go"
-zplug "plugins/taskwarrior",       from:oh-my-zsh, if:"which task"
 zplug "plugins/lein",              from:oh-my-zsh, if:"which lein"
 zplug "plugins/pip",               from:oh-my-zsh, if:"which pip"
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh, if:"which workon"
