@@ -51,6 +51,9 @@ Plug 'wakatime/vim-wakatime'
 
 Plug 'mhinz/vim-startify'
 
+" minimap
+Plug 'severin-lemaignan/vim-minimap'
+
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
