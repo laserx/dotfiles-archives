@@ -20,9 +20,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'altercation/vim-colors-solarized'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'itchyny/lightline.vim'
-Plug 'elixir-lang/vim-elixir'
 Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/vim-easy-align'
@@ -53,6 +51,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'wakatime/vim-wakatime'
 
 Plug 'mhinz/vim-startify'
+
+" elixir support
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+
+" golang support
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Initialize plugin system
 call plug#end()
