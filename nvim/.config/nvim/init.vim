@@ -45,6 +45,7 @@ Plug 'honza/vim-snippets'
 Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'itchyny/calendar.vim'
+Plug 'morhetz/gruvbox'
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -167,7 +168,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme gruvbox
 catch
 endtry
 
@@ -368,7 +369,8 @@ set noshowmode
 " auto open nerd tree and move corsur to main windows
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+let NERDTreeIgnore = ['\.DS_Store', '\~$', '\.swp']
+let NERDTreeShowHidden = 1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -386,6 +388,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:deoplete#enable_at_startup = 1
 let g:webdevicons_enable = 1
+let g:go_version_warning = 0
 
 " set gui font(err this)
 if has("gui_running")
