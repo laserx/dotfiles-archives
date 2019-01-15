@@ -55,9 +55,17 @@ Plug 'mhinz/vim-startify'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
+" elm support
+Plug 'elmcast/elm-vim'
+
+" rust support
+Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
+Plug 'racer-rust/vim-racer'
+
 " golang support
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'zchee/deoplete-go'
 
 " Initialize plugin system
 call plug#end()
