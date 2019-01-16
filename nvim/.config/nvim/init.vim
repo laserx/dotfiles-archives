@@ -54,6 +54,9 @@ Plug 'mhinz/vim-startify'
 " minimap
 Plug 'severin-lemaignan/vim-minimap'
 
+" dart support
+Plug 'dart-lang/dart-vim-plugin'
+
 " elixir support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
